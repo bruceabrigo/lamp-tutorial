@@ -8,3 +8,11 @@ services:
     ports:
       - 80:80
       - 443:443
+  # setup databse service w MySQL
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=php_docker
+      - MYSQL_USER=php_docker
+      - MYSQL_PASSWORD=password 
+      - MySQL_ALLOW_EMPTY_PASSWORD=1
