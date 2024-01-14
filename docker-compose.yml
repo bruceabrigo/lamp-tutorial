@@ -17,6 +17,9 @@ services:
       - MYSQL_PASSWORD=password 
       - MYSQL_ROOT_PASSWORD=password 
       - MySQL_ALLOW_EMPTY_PASSWORD=1
+    volumes:
+    # create a local volume to store db to a local enviornment
+      - "./db:/docker-entrypoint-initdb.d" #sync persistent sql files with container
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
